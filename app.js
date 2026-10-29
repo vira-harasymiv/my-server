@@ -19,9 +19,11 @@ app.listen(port, () => {
 });
 
 app.get("/about", (req, res) => {
-  res.send("This is the about page. I built this server myself!");
+  res.send("This is the page about a program");
 });
 
-app.get("/contact", (req, res) => {
-  res.send("Contact me at: hello@mysite.com");
+app.get("/api/greeting", (req, res) => {
+  res.json({
+    name: req.query.name,
+  });
 });
